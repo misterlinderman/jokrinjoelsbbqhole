@@ -1,0 +1,31 @@
+---
+description: Core project conventions for Jorkin' Joel's BBQ Hole WordPress site
+alwaysApply: true
+---
+
+# Jorkin' Joel's BBQ Hole — Project Conventions
+
+## Architecture
+- **Theme** (`jjbbq-theme/`): visual presentation only — classic PHP templates, no FSE/block theme
+- **Plugin** (`jjbbq-manager/`): all data structures (CPTs, ACF fields, admin UX)
+- Theme reads from plugin via helper functions; never define CPTs in the theme
+
+## PHP Standards
+- PHP 8.0+ compatible syntax
+- Text domain: `'jjbbq'` for all translatable strings
+- Prefix all functions, hooks, handles: `jjbbq_`
+- All ACF `get_field()` calls must have fallback values
+- All `WP_Query` loops must call `wp_reset_postdata()`
+- Enqueue handles use `jjbbq-` prefix
+
+## Custom Post Types
+- `jjbbq_event` — Pop-Up Events (slug: `pop-ups`)
+- `jjbbq_menu_item` — Menu Items (slug: `menu-items`)
+
+## Brand Colors
+- Red: `#CC0000`, Gold: `#F5A800`, Black: `#000000`
+- Pink: `#F4A0A0`, Dark BG: `#1A0000`, Light BG: `#FFF8EE`
+
+## Brand Voice
+- Bold, loud, unapologetic, local. Never corporate or delicate.
+- The sell-out model is a feature, not a limitation.

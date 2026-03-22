@@ -40,12 +40,14 @@ themes/twentytwentyfive/
 # Commercial / third-party plugins (manage outside version control)
 # =========================
 plugins/gravityforms/
-plugins/classic-editor
+plugins/classic-editor/
+plugins/advanced-custom-fields/
 
 # =========================
 # Node / build tooling (if used in custom theme/plugin)
 # =========================
 node_modules/
+package-lock.json
 .env
 .env.*
 npm-debug.log*
@@ -53,10 +55,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # =========================
-# Compiled / minified output (uncomment if you prefer to build on deploy)
+# Compiled CSS (built from SCSS — rebuild on deploy)
 # =========================
-# themes/your-theme/dist/
-# plugins/your-plugin/dist/
+themes/jjbbq-theme/assets/css/main.css
+themes/jjbbq-theme/assets/css/main.css.map
 
 # =========================
 # PHP tooling

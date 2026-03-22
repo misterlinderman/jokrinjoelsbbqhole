@@ -1,0 +1,76 @@
+// ==============================================
+// Typography
+// ==============================================
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-black);
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: var(--color-red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--color-gold);
+  }
+}
+
+// Dark background text variants
+.text-light {
+  color: var(--color-white);
+
+  h1, h2, h3, h4 { color: var(--color-white); }
+  a { color: var(--color-gold); }
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-red {
+  color: var(--color-red);
+}
+
+small, .text-sm {
+  font-size: 0.875rem;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

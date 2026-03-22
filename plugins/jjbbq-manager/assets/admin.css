@@ -1,0 +1,46 @@
+/**
+ * JJBBQ Manager — Admin Styles
+ */
+
+/* Highlight upcoming event rows */
+.post-type-jjbbq_event .type-jjbbq_event .jjbbq-status--upcoming {
+    background: #F5A800;
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.post-type-jjbbq_event .type-jjbbq_event .jjbbq-status--past {
+    background: #666;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.post-type-jjbbq_event .type-jjbbq_event .jjbbq-status--sold-out {
+    background: #CC0000;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Subtle row highlighting based on status */
+.post-type-jjbbq_event tr:has(.jjbbq-status--upcoming) {
+    background-color: rgba(245, 168, 0, 0.08) !important;
+}
+
+.post-type-jjbbq_event tr:has(.jjbbq-status--sold-out) {
+    background-color: rgba(204, 0, 0, 0.05) !important;
+}
+
+/* Pig mascot in admin menu */
+#adminmenu .menu-icon-jjbbq_event .wp-menu-image::before {
+    content: "🐷";
+    font-family: inherit;
+    font-size: 18px;
+}

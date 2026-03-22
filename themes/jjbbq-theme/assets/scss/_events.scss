@@ -1,0 +1,194 @@
+@use 'variables' as *;
+
+// ==============================================
+// Events / Pop-Up Schedule
+// ==============================================
+
+// Next pop-up featured section
+.next-popup {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  padding-block: var(--space-xxl);
+  text-align: center;
+
+  @media (min-width: $bp-md) {
+    padding-block: var(--space-xxxl);
+  }
+
+  h2 {
+    color: var(--color-black);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.next-popup__card {
+  max-width: 700px;
+  margin-inline: auto;
+  background: var(--color-white);
+  border: 3px solid var(--color-black);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: 6px 6px 0 var(--color-black);
+  text-align: left;
+}
+
+.next-popup__date {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-red);
+  margin-bottom: var(--space-sm);
+}
+
+.next-popup__venue {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  margin-bottom: var(--space-xs);
+}
+
+.next-popup__detail {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: var(--space-xs);
+}
+
+.next-popup__partner {
+  font-style: italic;
+  color: var(--color-red);
+  margin-top: var(--space-sm);
+}
+
+.next-popup__flyer {
+  margin-top: var(--space-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.next-popup__fallback {
+  max-width: 500px;
+  margin-inline: auto;
+  font-size: 1.15rem;
+
+  a {
+    color: var(--color-red);
+    font-weight: 700;
+  }
+}
+
+// Event archive page
+.events-archive {
+  padding-block: var(--space-xxl);
+}
+
+.events-section {
+  margin-bottom: var(--space-xxl);
+
+  h2 {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+// Event cards in grid
+.event-card {
+  background: var(--color-white);
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: 4px 4px 0 var(--color-black);
+
+  &.event-card--upcoming {
+    border-color: var(--color-gold);
+    box-shadow: 4px 4px 0 var(--color-gold);
+  }
+}
+
+.event-card__date {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-red);
+  margin-bottom: var(--space-xs);
+}
+
+.event-card__venue {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.event-card__address {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.event-card__time {
+  color: #444;
+  font-size: 0.9rem;
+  margin-top: var(--space-xs);
+}
+
+// Past events simple list
+.past-events-list {
+  .past-event {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-block: var(--space-sm);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:last-child { border-bottom: none; }
+  }
+
+  .past-event__venue {
+    font-weight: 600;
+  }
+
+  .past-event__date {
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
+
+// Single event page
+.single-event {
+  padding-block: var(--space-xxl);
+}
+
+.single-event__header {
+  margin-bottom: var(--space-xl);
+}
+
+.single-event__date {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-red);
+  margin-bottom: var(--space-sm);
+}
+
+.single-event__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.single-event__flyer {
+  max-width: 600px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.single-event__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+  color: var(--color-red);
+}

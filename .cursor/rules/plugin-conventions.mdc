@@ -1,0 +1,15 @@
+---
+description: Plugin development conventions for jjbbq-manager
+globs: plugins/jjbbq-manager/**/*.php
+alwaysApply: false
+---
+
+# Plugin Conventions
+
+- Plugin owns ALL data structures — CPTs, ACF field groups, admin columns
+- Register ACF fields programmatically via `acf_add_local_field_group()`
+- Check for ACF dependency and show admin notice if missing
+- Define constants: `JJBBQ_PLUGIN_PATH`, `JJBBQ_PLUGIN_URL`, `JJBBQ_VERSION`
+- Helper functions are callable by the theme (e.g., `jjbbq_get_next_event()`)
+- Hook CPT registration to `init` action
+- Seed data function runs only once (checked via `get_option('jjbbq_seeded')`)

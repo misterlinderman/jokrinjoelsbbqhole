@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+// ==============================================
+// Footer
+// ==============================================
+
+.site-footer {
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
+  border-top: 4px solid var(--color-gold);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding-block: var(--space-xxl);
+
+  @media (min-width: $bp-md) {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+}
+
+// Footer columns
+.footer-brand {
+  .site-logo__text {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-sm);
+    display: inline-block;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+  }
+}
+
+.footer-nav {
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .menu-item a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: var(--color-gold);
+    }
+  }
+}
+
+.footer-social {
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--color-gold);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--color-white);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+}
+
+// Copyright bar
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-block: var(--space-lg);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}

@@ -1,0 +1,16 @@
+---
+description: WordPress PHP template conventions for jjbbq-theme
+globs: themes/jjbbq-theme/**/*.php
+alwaysApply: false
+---
+
+# Theme PHP Conventions
+
+- Classic PHP templates — no block theme, no FSE, no page builders
+- Use `get_template_part()` for all reusable sections
+- Wrap user-facing strings in `__()` or `_e()` with `'jjbbq'` text domain
+- Template parts live in `template-parts/` directory
+- Helper functions live in `inc/template-functions.php`
+- Images must have `loading="lazy"` and proper `alt` attributes
+- Include `wp_head()` before `</head>` and `wp_footer()` before `</body>`
+- Use `esc_html()`, `esc_attr()`, `esc_url()` for output escaping

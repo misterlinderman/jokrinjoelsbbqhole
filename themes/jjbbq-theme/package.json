@@ -1,0 +1,13 @@
+{
+  "name": "jjbbq-theme",
+  "version": "1.0.0",
+  "description": "Jorkin' Joel's BBQ Hole WordPress theme build tools",
+  "scripts": {
+    "build": "sass assets/scss/main.scss:assets/css/main.css --style=compressed --no-source-map",
+    "watch": "sass --watch assets/scss/main.scss:assets/css/main.css --style=expanded",
+    "dev": "sass --watch assets/scss/main.scss:assets/css/main.css --style=expanded --source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

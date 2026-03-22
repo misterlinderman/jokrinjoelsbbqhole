@@ -1,0 +1,16 @@
+---
+description: SCSS conventions for jjbbq-theme
+globs: themes/jjbbq-theme/assets/scss/**/*.scss
+alwaysApply: false
+---
+
+# SCSS Conventions
+
+- Pure SCSS with CSS custom properties — no Bootstrap, no Tailwind
+- Mobile-first breakpoints: sm(480px), md(768px), lg(1024px), xl(1200px)
+- Use `_variables.scss` tokens via CSS custom properties `var(--color-red)` etc.
+- One partial per concern: `_header.scss`, `_hero.scss`, etc.
+- `main.scss` imports all partials — this compiles to `assets/css/main.css`
+- Max compiled CSS target: ~20-30kb
+- Container max-width: 1200px
+- Fonts: Bangers (display), Inter (body) via Google Fonts

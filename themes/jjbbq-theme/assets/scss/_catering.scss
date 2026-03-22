@@ -1,0 +1,151 @@
+@use 'variables' as *;
+
+// ==============================================
+// Catering Section & Page
+// ==============================================
+
+// Homepage CTA band
+.catering-cta {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  text-align: center;
+  padding-block: var(--space-xxl);
+
+  @media (min-width: $bp-md) {
+    padding-block: var(--space-xxxl);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    text-shadow: 2px 2px 0 var(--color-black);
+    margin-bottom: var(--space-md);
+  }
+
+  p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    opacity: 0.95;
+  }
+}
+
+// Catering page
+.catering-hero {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  text-align: center;
+  padding-block: var(--space-xxl);
+
+  h1 {
+    color: var(--color-gold);
+    text-shadow: 3px 3px 0 var(--color-black);
+    margin-bottom: var(--space-md);
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+}
+
+.catering-content {
+  padding-block: var(--space-xxl);
+}
+
+.catering-offerings {
+  margin-bottom: var(--space-xxl);
+
+  h2 {
+    margin-bottom: var(--space-lg);
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+
+  li {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--color-red);
+    padding: var(--space-md);
+    background: var(--color-light-bg);
+    border-radius: var(--radius-md);
+    text-align: center;
+    border: 2px solid var(--color-gold);
+  }
+}
+
+// Catering inquiry form
+.catering-form {
+  max-width: 700px;
+
+  h2 {
+    margin-bottom: var(--space-lg);
+  }
+}
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-xs);
+  color: var(--color-black);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background: var(--color-white);
+  transition: border-color 0.2s ease, outline 0.2s ease;
+
+  &:focus {
+    border-color: var(--color-gold);
+    outline: 2px solid var(--color-gold);
+    outline-offset: 1px;
+  }
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+
+  @media (min-width: $bp-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.catering-alt-contact {
+  margin-top: var(--space-xxl);
+  text-align: center;
+  padding: var(--space-xl);
+  background: var(--color-light-bg);
+  border-radius: var(--radius-md);
+
+  a {
+    color: var(--color-red);
+    font-weight: 700;
+  }
+}

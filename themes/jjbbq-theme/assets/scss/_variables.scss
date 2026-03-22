@@ -1,0 +1,59 @@
+// ==============================================
+// Brand Tokens — Jorkin' Joel's BBQ Hole
+// ==============================================
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;700&display=swap');
+
+// Colors
+$color-red:      #CC0000;
+$color-gold:     #F5A800;
+$color-black:    #000000;
+$color-pink:     #F4A0A0;
+$color-white:    #FFFFFF;
+$color-dark-bg:  #1A0000;
+$color-light-bg: #FFF8EE;
+
+:root {
+  --color-red:      #{$color-red};
+  --color-gold:     #{$color-gold};
+  --color-black:    #{$color-black};
+  --color-pink:     #{$color-pink};
+  --color-white:    #{$color-white};
+  --color-dark-bg:  #{$color-dark-bg};
+  --color-light-bg: #{$color-light-bg};
+
+  // Typography
+  --font-display: 'Bangers', cursive;
+  --font-body: 'Inter', sans-serif;
+
+  // Spacing scale
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.5rem;
+  --space-xl:   2.5rem;
+  --space-xxl:  4rem;
+  --space-xxxl: 6rem;
+
+  // Layout
+  --container-max: 1200px;
+  --container-pad: 1.25rem;
+
+  // Radii
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  // Breakpoints (for reference — used as SCSS vars below)
+  --bp-sm:  480px;
+  --bp-md:  768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1200px;
+}
+
+// Breakpoint SCSS vars
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1200px;

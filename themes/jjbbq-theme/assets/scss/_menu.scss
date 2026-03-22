@@ -1,0 +1,130 @@
+@use 'variables' as *;
+
+// ==============================================
+// Menu Section & Page
+// ==============================================
+
+// Homepage menu preview
+.menu-preview {
+  background-color: var(--color-light-bg);
+  padding-block: var(--space-xxl);
+
+  @media (min-width: $bp-md) {
+    padding-block: var(--space-xxxl);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+}
+
+.menu-preview__cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+// Menu item card
+.menu-item-card {
+  padding: var(--space-lg);
+  background: var(--color-white);
+  border: 2px solid var(--color-black);
+  border-radius: var(--radius-md);
+  box-shadow: 3px 3px 0 var(--color-black);
+}
+
+.menu-item-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.menu-item-card__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-black);
+}
+
+.menu-item-card__price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-red);
+  white-space: nowrap;
+}
+
+.menu-item-card__desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.menu-item-card__note {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+  margin-top: var(--space-xs);
+}
+
+// Full menu page — CSS tabs
+.menu-page {
+  padding-block: var(--space-xxl);
+
+  @media (min-width: $bp-md) {
+    padding-block: var(--space-xxxl);
+  }
+}
+
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  border-bottom: 3px solid var(--color-gold);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xs);
+}
+
+.menu-tab {
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: none;
+  border: 2px solid transparent;
+  border-bottom: none;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  cursor: pointer;
+  color: var(--color-black);
+  transition: all 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-light-bg);
+    color: var(--color-red);
+  }
+
+  &.is-active {
+    background-color: var(--color-red);
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+  }
+}
+
+.menu-tab-content {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.menu-note {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: var(--space-xxl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
