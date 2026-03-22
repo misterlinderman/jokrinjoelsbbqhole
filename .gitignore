@@ -1,0 +1,67 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+._*
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =========================
+# WordPress uploads (media, environment-specific)
+# =========================
+uploads/
+
+# =========================
+# WordPress upgrade/cache artifacts
+# =========================
+upgrade/
+cache/
+backups/
+backup-db/
+blogs.dir/
+wp-cache-config.php
+advanced-cache.php
+object-cache.php
+db.php
+
+# =========================
+# Default / stock themes (ship with WordPress core)
+# =========================
+themes/twentytwentythree/
+themes/twentytwentyfour/
+themes/twentytwentyfive/
+
+# =========================
+# Commercial / third-party plugins (manage outside version control)
+# =========================
+plugins/gravityforms/
+plugins/gravityforms_*.zip
+
+# =========================
+# Node / build tooling (if used in custom theme/plugin)
+# =========================
+node_modules/
+.env
+.env.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Compiled / minified output (uncomment if you prefer to build on deploy)
+# =========================
+# themes/your-theme/dist/
+# plugins/your-plugin/dist/
+
+# =========================
+# PHP tooling
+# =========================
+vendor/
+composer.lock
