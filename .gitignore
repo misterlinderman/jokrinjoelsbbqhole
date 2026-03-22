@@ -34,8 +34,6 @@ db.php
 # =========================
 # Default / stock themes (ship with WordPress core)
 # =========================
-themes/twentytwentythree/
-themes/twentytwentyfour/
 themes/twentytwentyfive/
 
 # =========================
