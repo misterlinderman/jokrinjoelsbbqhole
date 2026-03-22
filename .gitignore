@@ -42,7 +42,7 @@ themes/twentytwentyfive/
 # Commercial / third-party plugins (manage outside version control)
 # =========================
 plugins/gravityforms/
-plugins/gravityforms_*.zip
+plugins/classic-editor
 
 # =========================
 # Node / build tooling (if used in custom theme/plugin)
