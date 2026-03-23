@@ -1,0 +1,444 @@
+---
+description: Visual design correction phases for Jorkin' Joel's BBQ Hole WordPress theme. Apply these phases in order after the initial BUILD_PHASES.md build is complete. Each phase is self-contained and can be pasted directly into Cursor.
+globs: ["**/*.scss", "**/*.css", "**/*.php", "**/*.js"]
+alwaysApply: false
+---
+
+# JJBBQ Visual Fix Phases
+# Brand Alignment & Design Improvement Prompts
+# Apply after BUILD_PHASES.md Phase 10 (QA) is complete.
+# Feed each phase to Cursor in order. Do not skip phases.
+
+---
+
+## PHASE VF-1 — Color Token Correction
+
+**Goal:** Brand colors are locked to Photoshop samples in `reference-images/Initial Build and Client Identity/` (`jjbbq-red.png`, `jjbbq-yellow.png`, `jjbbq-pink-light.png`, `jjbbq-pink-dark.png`). Black `#000000` and white `#ffffff` are standard.
+
+**Cursor Prompt:**
+
+Open `assets/scss/_variables.scss`.
+
+Use these official values (RGB shown for documentation):
+
+```scss
+// PRIMARY RED — jjbbq-red.png · rgb(221, 44, 47)
+$color-red: #dd2c2f;
+
+// GOLD / YELLOW — jjbbq-yellow.png · rgb(247, 177, 18)
+$color-gold: #f7b112;
+$color-gold-dark: #bb8306; // darker gold derived from official swatch (hover / depth)
+
+// PINKS — jjbbq-pink-light.png · rgb(250, 150, 141) · jjbbq-pink-dark.png · rgb(251, 77, 81)
+$color-pink-light: #fa968d;
+$color-pink-dark: #fb4d51;
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+// UI neutrals (supporting — adjust only if contrast testing requires)
+$color-cream: #faf6f0;
+$color-dark-bg: #1a0000;
+$color-text-on-red: #fff5e0;
+```
+
+Expose `--color-pink-light`, `--color-pink-dark`, and keep `--color-pink` as an alias for `--color-pink-light` if older partials expect it.
+
+After updating tokens, compile SCSS and verify:
+- Hero / header use `$color-red` (`#dd2c2f`)
+- Gold band / gold accents use `$color-gold` (`#f7b112`)
+- No stray legacy hex (`#CC0000`, `#F5A800`, etc.) in SCSS
+
+Do not change layout or structural CSS in this phase — tokens only.
+
+---
+
+## PHASE VF-2 — Logo Integration in Hero
+
+**Goal:** The hero section currently uses only typography. The primary logo (circular badge with pig mascot and full wordmark) must be placed prominently in the hero. The logo is the brand's strongest visual asset and should be the first thing a visitor sees.
+
+**Cursor Prompt:**
+
+Open the hero section template. This is likely in `template-parts/home/section-hero.php` or similar.
+
+Make the following changes:
+
+1. **Add the logo to the hero above the headline.** The logo image should be served from `reference-images/logo-primary.png` (transparent background PNG). Display it centered, at `max-width: 320px` on desktop, `max-width: 220px` on mobile. Add `2rem` of bottom margin between the logo and the headline text.
+
+2. **Adjust headline hierarchy.** Now that the logo carries the brand name, the `<h1>` headline should shift to the tagline only — something like "POP-UP BBQ. SELL-OUT QUALITY." — rather than repeating the brand name. Update the headline text accordingly.
+
+3. **Add a subtle drop shadow to the logo image** so it reads cleanly against the red background:
+```css
+.hero__logo {
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.4));
+  display: block;
+  margin: 0 auto 2rem;
+  max-width: 320px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .hero__logo { max-width: 220px; }
+}
+```
+
+4. Do not change hero background color, CTA buttons, or subheadline copy in this phase.
+
+---
+
+## PHASE VF-3 — Secondary Pig Butt Asset Placement
+
+**Goal:** The secondary "pig butt" circular mark (reference-images/logo-butt.png) is unused. It should be deployed as a decorative watermark element in at least two locations: the hero background and the footer.
+
+**Cursor Prompt:**
+
+The secondary logo asset lives at `reference-images/logo-butt.png`. This is the standalone circular pig rear illustration — used as a decorative accent, not a navigational element.
+
+Make the following two placements:
+
+**1. Hero background watermark:**
+In the hero section CSS, add the pig butt as a background image positioned to the far right, partially cropped, at low opacity. This creates depth without competing with the main logo:
+
+```scss
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('../../reference-images/logo-butt.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+// Ensure hero content sits above the watermark
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero::after {
+    width: 220px;
+    height: 220px;
+    right: -30px;
+    bottom: -20px;
+  }
+}
+```
+
+**2. Footer watermark:**
+Apply the same technique to the footer, positioned left side, slightly larger opacity since the footer is dark:
+
+```scss
+.site-footer {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    background-image: url('../../reference-images/logo-butt.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.site-footer__inner {
+  position: relative;
+  z-index: 1;
+}
+```
+
+Verify the watermarks do not affect click targets, tab order, or layout reflow.
+
+---
+
+## PHASE VF-4 — Typography Upgrade
+
+**Goal:** The current font choices feel generic and don't match the cartoon-bold personality of the logo lettering. Headline fonts should push toward chunky, characterful, hand-drawn energy. Body copy should remain clean and readable.
+
+**Cursor Prompt:**
+
+Open `functions.php` (or wherever Google Fonts are enqueued) and `assets/scss/_typography.scss`.
+
+**1. Replace the current headline font enqueue with:**
+```php
+// In functions.php wp_enqueue_style call:
+'https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700&display=swap'
+```
+
+- `Boogaloo` — headline font. Chunky, rounded, cartoon energy. Matches the logo's personality without being a direct copy.
+- `Nunito` — body font. Rounded, friendly, highly readable at small sizes.
+
+**2. Update SCSS font variables:**
+```scss
+$font-display: 'Boogaloo', cursive;
+$font-body:    'Nunito', sans-serif;
+```
+
+**3. Update headline usage across the theme:**
+```scss
+h1, h2, h3,
+.section-title,
+.hero__headline,
+.card__title,
+.nav__logo-text {
+  font-family: $font-display;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+body, p, li, td, input, textarea, select {
+  font-family: $font-body;
+}
+```
+
+**4. Scale the hero headline up.** With Boogaloo loaded, bump the hero `<h1>` to `clamp(2.4rem, 6vw, 4.2rem)` so it commands the space without being crammed.
+
+Do not change font colors, section backgrounds, or layout in this phase.
+
+---
+
+## PHASE VF-5 — Menu Card Visual Upgrade
+
+**Goal:** The homepage menu preview cards are plain white boxes with thin borders. They need more brand energy — a strong left-border accent, bolder price display, and a subtle warmth to the background.
+
+**Cursor Prompt:**
+
+Open the styles for the menu preview cards. These are likely in `assets/scss/_menu.scss` or `_home.scss`.
+
+Apply the following updates:
+
+```scss
+.menu-card {
+  background-color: $color-cream;         // Warm off-white, not pure white
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-left: 5px solid $color-red;      // Bold red left-border accent
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.menu-card__name {
+  font-family: $font-display;
+  font-size: 1.05rem;
+  color: $color-black;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.menu-card__price {
+  font-family: $font-display;
+  font-size: 1.15rem;
+  color: $color-red;
+  font-weight: 700;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+// Description line (shown on full menu page, hidden on homepage preview)
+.menu-card__desc {
+  font-family: $font-body;
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+```
+
+Also verify the "Full Menu" button below the cards uses `$color-red` as background with `$color-gold` or white text — it should not be a ghost/outline button on this section.
+
+---
+
+## PHASE VF-6 — Next Pop-Up Card Refinement
+
+**Goal:** The Next Pop-Up event card on the gold section is structurally strong but the card border and internal typography need polish. The date should read as the hero of the card, not just another line.
+
+**Cursor Prompt:**
+
+Open the styles for the upcoming event card. Likely in `assets/scss/_events.scss` or `_home.scss`.
+
+Update the event card:
+
+```scss
+.event-card--upcoming {
+  background: #FFFFFF;
+  border: 3px solid $color-black;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0px $color-black;  // Hard offset shadow — retro/bold feel
+  padding: 1.5rem 2rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.event-card__date {
+  font-family: $font-display;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  color: $color-red;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.event-card__venue {
+  font-family: $font-display;
+  font-size: 1.2rem;
+  color: $color-black;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.event-card__address,
+.event-card__time {
+  font-family: $font-body;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+}
+```
+
+The hard-offset box shadow (`6px 6px 0px #000`) echoes the black outline style of the logo lettering and gives the card a bold, hand-stamped quality that fits the brand.
+
+---
+
+## PHASE VF-7 — Footer Logo & Social Placeholder
+
+**Goal:** The footer currently shows only a text wordmark and a generic "Follow for pop-up announcements" line with no social link. Add the logo mark and wire up the Instagram link from the Customizer setting.
+
+**Cursor Prompt:**
+
+Open `template-parts/footer/footer-content.php` (or equivalent).
+
+**1. Replace the text-only logo with the actual logo image:**
+```php
+<div class="footer__brand">
+  <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+    <img
+      src="<?php echo esc_url( get_theme_file_uri( 'reference-images/logo-primary.png' ) ); ?>"
+      alt="<?php bloginfo( 'name' ); ?>"
+      class="footer__logo"
+      width="120"
+      height="120"
+      loading="lazy"
+    />
+  </a>
+  <p class="footer__tagline">Pop-up BBQ. Sell-out quality.</p>
+</div>
+```
+
+**2. Wire Instagram link from Customizer:**
+```php
+<?php
+$instagram_url = get_theme_mod( 'jjbbq_instagram_url', '' );
+if ( $instagram_url ) : ?>
+  <a
+    href="<?php echo esc_url( $instagram_url ); ?>"
+    class="footer__social-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Follow Jorkin' Joel's on Instagram"
+  >
+    Follow the Smoke on Instagram ↗
+  </a>
+<?php endif; ?>
+```
+
+**3. Footer logo sizing:**
+```scss
+.footer__logo {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  margin-bottom: 0.75rem;
+}
+
+.footer__tagline {
+  font-family: $font-body;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer__social-link {
+  font-family: $font-display;
+  font-size: 1rem;
+  color: $color-gold;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+```
+
+---
+
+## PHASE VF-8 — QA & Visual Regression Check
+
+**Goal:** Confirm all visual fix phases rendered correctly, no regressions in layout or accessibility, and the site reads as a cohesive brand expression.
+
+**Cursor Prompt:**
+
+Perform a full visual and code QA pass across all pages. Check the following items and note any failures:
+
+**Color:**
+- [ ] Hero background uses official red (`#dd2c2f` · rgb 221, 44, 47)
+- [ ] Gold/Next Pop-Up section uses official gold (`#f7b112` · rgb 247, 177, 18)
+- [ ] Pink tokens available: light `#fa968d`, dark `#fb4d51` (per `jjbbq-pink-*.png`)
+- [ ] No legacy brand hex (`#CC0000`, `#F5A800`, etc.) in SCSS
+- [ ] Menu card left-border accent uses `--color-red`
+
+**Logo & Assets:**
+- [ ] Primary logo appears in hero, centered, with drop shadow
+- [ ] Pig butt watermark visible (low opacity) in hero and footer
+- [ ] Footer shows logo image, not text-only wordmark
+- [ ] No broken image `alt` text showing in place of images
+
+**Typography:**
+- [ ] Boogaloo loaded and applied to all headings and section titles
+- [ ] Nunito loaded and applied to all body copy
+- [ ] Hero headline is `clamp(2.4rem, 6vw, 4.2rem)` or similar — not undersized
+- [ ] No fallback to Arial, Inter, or system-ui for display text
+
+**Cards & Components:**
+- [ ] Menu cards show red left-border, warm cream background, no pure white
+- [ ] Event card has hard-offset box shadow
+- [ ] "Full Menu" CTA is a solid red button, not ghost/outline
+
+**Accessibility:**
+- [ ] Logo images have descriptive `alt` attributes
+- [ ] Watermark pseudo-elements have `pointer-events: none`
+- [ ] Color contrast on gold section passes WCAG AA (black text on `#f7b112` — verify after deploy)
+- [ ] Instagram link has `aria-label`
+
+If any item fails, fix before marking VF phases complete.

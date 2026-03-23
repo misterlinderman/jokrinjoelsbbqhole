@@ -9,9 +9,16 @@ function jjbbq_enqueue_assets(): void {
     $version = JJBBQ_THEME_VERSION;
 
     wp_enqueue_style(
+        'jjbbq-fonts',
+        'https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;600;700&display=swap',
+        [],
+        null
+    );
+
+    wp_enqueue_style(
         'jjbbq-main',
         JJBBQ_THEME_URI . '/assets/css/main.css',
-        [],
+        [ 'jjbbq-fonts' ],
         $version
     );
 

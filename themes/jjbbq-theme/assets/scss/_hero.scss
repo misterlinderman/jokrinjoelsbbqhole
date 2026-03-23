@@ -15,34 +15,64 @@
   @media (min-width: $bp-md) {
     padding-block: calc(var(--space-xxxl) * 1.5);
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    bottom: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('../../reference-images/logo-butt.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (max-width: $bp-md) {
+    &::after {
+      width: 220px;
+      height: 220px;
+      right: -30px;
+      bottom: -20px;
+    }
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
 }
 
 .hero__logo {
-  max-width: 280px;
-  margin-inline: auto;
-  margin-bottom: var(--space-xl);
+  display: block;
+  margin: 0 auto 2rem;
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.4));
 
-  @media (min-width: $bp-md) {
-    max-width: 360px;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
+  @media (max-width: $bp-md) {
+    max-width: 220px;
   }
 }
 
 .hero__headline {
   font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
   color: var(--color-gold);
   text-shadow: 3px 3px 0 var(--color-black);
   margin-bottom: var(--space-md);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .hero__subhead {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--color-white);
-  opacity: 0.9;
+  color: var(--color-text-on-red);
   margin-bottom: var(--space-xl);
   max-width: 600px;
   margin-inline: auto;

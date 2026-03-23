@@ -22,9 +22,13 @@ alwaysApply: true
 - `jjbbq_event` — Pop-Up Events (slug: `pop-ups`)
 - `jjbbq_menu_item` — Menu Items (slug: `menu-items`)
 
-## Brand Colors
-- Red: `#CC0000`, Gold: `#F5A800`, Black: `#000000`
-- Pink: `#F4A0A0`, Dark BG: `#1A0000`, Light BG: `#FFF8EE`
+## Brand Colors (official — Photoshop samples: `reference-images/Initial Build and Client Identity/jjbbq-*.png`)
+- Red: `#dd2c2f` · rgb(221, 44, 47)
+- Gold / yellow: `#f7b112` · rgb(247, 177, 18)
+- Pink light: `#fa968d` · rgb(250, 150, 141)
+- Pink dark: `#fb4d51` · rgb(251, 77, 81)
+- Black: `#000000`, White: `#ffffff`
+- UI neutrals in theme: dark BG `#1a0000`, light/cream `#faf6f0`, text on red `#fff5e0` — see `assets/scss/_variables.scss`
 
 ## Brand Voice
 - Bold, loud, unapologetic, local. Never corporate or delicate.

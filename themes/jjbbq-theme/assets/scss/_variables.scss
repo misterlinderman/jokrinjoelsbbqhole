@@ -1,39 +1,60 @@
 // ==============================================
 // Brand Tokens — Jorkin' Joel's BBQ Hole
 // ==============================================
+// Official colors — sampled in Photoshop (screenshots in
+// reference-images/Initial Build and Client Identity/: jjbbq-red.png,
+// jjbbq-yellow.png, jjbbq-pink-light.png, jjbbq-pink-dark.png).
+// Black and white are standard #000 / #fff.
 
-// Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;600;700&display=swap');
+// Primary red — jjbbq-red.png
+$color-red: #dd2c2f; // rgb(221, 44, 47)
 
-// Colors
-$color-red:      #CC0000;
-$color-gold:     #F5A800;
-$color-black:    #000000;
-$color-pink:     #F4A0A0;
-$color-white:    #FFFFFF;
-$color-dark-bg:  #1A0000;
-$color-light-bg: #FFF8EE;
+// Accent gold / yellow — jjbbq-yellow.png
+$color-gold: #f7b112; // rgb(247, 177, 18)
+// Darker gold for hover / depth (derived from official gold, not separately sampled)
+$color-gold-dark: #bb8306;
+
+// Pinks — jjbbq-pink-light.png, jjbbq-pink-dark.png
+$color-pink-light: #fa968d; // rgb(250, 150, 141)
+$color-pink-dark: #fb4d51; // rgb(251, 77, 81)
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Supporting neutrals (not re-sampled; tuned for UI)
+$color-cream: #faf6f0;
+$color-dark-bg: #1a0000;
+$color-text-on-red: #fff5e0;
+
+// Aliases used across existing partials
+$color-pink: $color-pink-light;
+$color-light-bg: $color-cream;
 
 :root {
-  --color-red:      #{$color-red};
-  --color-gold:     #{$color-gold};
-  --color-black:    #{$color-black};
-  --color-pink:     #{$color-pink};
-  --color-white:    #{$color-white};
-  --color-dark-bg:  #{$color-dark-bg};
+  --color-red: #{$color-red};
+  --color-gold: #{$color-gold};
+  --color-gold-dark: #{$color-gold-dark};
+  --color-pink-light: #{$color-pink-light};
+  --color-pink-dark: #{$color-pink-dark};
+  --color-pink: #{$color-pink-light};
+  --color-black: #{$color-black};
+  --color-cream: #{$color-cream};
+  --color-white: #{$color-white};
+  --color-dark-bg: #{$color-dark-bg};
   --color-light-bg: #{$color-light-bg};
+  --color-text-on-red: #{$color-text-on-red};
 
-  // Typography
-  --font-display: 'Bangers', cursive;
-  --font-body: 'Inter', sans-serif;
+  // Typography (loaded via enqueue.php)
+  --font-display: 'Boogaloo', cursive;
+  --font-body: 'Nunito', sans-serif;
 
   // Spacing scale
-  --space-xs:   0.25rem;
-  --space-sm:   0.5rem;
-  --space-md:   1rem;
-  --space-lg:   1.5rem;
-  --space-xl:   2.5rem;
-  --space-xxl:  4rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-xxl: 4rem;
   --space-xxxl: 6rem;
 
   // Layout
@@ -46,14 +67,14 @@ $color-light-bg: #FFF8EE;
   --radius-lg: 16px;
 
   // Breakpoints (for reference — used as SCSS vars below)
-  --bp-sm:  480px;
-  --bp-md:  768px;
-  --bp-lg:  1024px;
-  --bp-xl:  1200px;
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1200px;
 }
 
 // Breakpoint SCSS vars
-$bp-sm:  480px;
-$bp-md:  768px;
-$bp-lg:  1024px;
-$bp-xl:  1200px;
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1200px;

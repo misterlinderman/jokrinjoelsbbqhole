@@ -44,13 +44,18 @@ This project builds a custom WordPress theme that matches Joel's existing brand 
 
 ## Brand Color Reference
 
+Official values (Photoshop samples: `reference-images/Initial Build and Client Identity/jjbbq-red.png`, `jjbbq-yellow.png`, `jjbbq-pink-light.png`, `jjbbq-pink-dark.png`):
+
 ```
-Primary Red:   #CC0000
-Accent Gold:   #F5A800
-Black:         #000000
-Pig Pink:      #F4A0A0
-White:         #FFFFFF
+Primary red:     #dd2c2f   rgb(221, 44, 47)
+Gold / yellow:   #f7b112   rgb(247, 177, 18)
+Pink (light):    #fa968d   rgb(250, 150, 141)
+Pink (dark):     #fb4d51   rgb(251, 77, 81)
+Black:           #000000
+White:           #ffffff
 ```
+
+Supporting UI tokens (cream section bg, footer dark band, warm text on red) live in `themes/jjbbq-theme/assets/scss/_variables.scss`.
 
 ---
 

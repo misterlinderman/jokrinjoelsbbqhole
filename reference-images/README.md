@@ -63,19 +63,18 @@ When giving Cursor a prompt, you can reference these files directly:
 
 ---
 
-## Quick Color Extraction Reference
+## Official brand colors (locked in)
 
-When the logo is available, these are the expected colors to confirm:
+Sampled in Photoshop; screenshots in **`Initial Build and Client Identity/`**:
 
-| Color | Expected Hex | Where |
-|---|---|---|
-| Background red | `#CC0000` | Badge background |
-| Gold ring / text | `#F5A800` | Ring accent + lettering |
-| Outline / shadow | `#000000` | Chunky outlines |
-| Pig skin | `#F4A0A0` | Mascot color |
-| Highlights | `#FFFFFF` | Lettering highlights |
+| Swatch file | Role | Hex | RGB |
+|---|---|---|---|
+| `jjbbq-red.png` | Primary red | `#dd2c2f` | 221, 44, 47 |
+| `jjbbq-yellow.png` | Gold / yellow | `#f7b112` | 247, 177, 18 |
+| `jjbbq-pink-light.png` | Pink light | `#fa968d` | 250, 150, 141 |
+| `jjbbq-pink-dark.png` | Pink dark | `#fb4d51` | 251, 77, 81 |
 
-If the actual logo colors differ, update `_variables.scss` and `docs/PROJECT_CONTEXT.md` accordingly, and update the Cursor rules in `.cursor/rules/jjbbq.mdc`.
+Black `#000000` and white `#ffffff` are standard. Theme tokens (cream sections, footer dark band, text-on-red) are defined in `themes/jjbbq-theme/assets/scss/_variables.scss` and documented in `docs/PROJECT_CONTEXT.md`.
 
 ---
 

@@ -28,26 +28,25 @@ The sell-out model is a *feature*, not a bug. It signals quality and demand. Web
 
 ### Color Palette
 
-| Name | Hex | Usage |
-|---|---|---|
-| Primary Red | `#CC0000` | Backgrounds, hero, primary buttons, section bands |
-| Accent Gold | `#F5A800` | Headings, borders, highlights, secondary buttons |
-| Black | `#000000` | Outlines, body text on light backgrounds |
-| Pig Pink | `#F4A0A0` | Accent only — pig mascot reference, subtle use |
-| White | `#FFFFFF` | Text on dark backgrounds, card backgrounds |
+Official brand colors were sampled in Photoshop; screenshots with hex/RGB live in `reference-images/Initial Build and Client Identity/` (`jjbbq-red.png`, `jjbbq-yellow.png`, `jjbbq-pink-light.png`, `jjbbq-pink-dark.png`).
 
-### SCSS Variables
+| Name | Hex | RGB | Usage |
+|---|---|---|---|
+| Primary red | `#dd2c2f` | 221, 44, 47 | Backgrounds, hero, primary buttons, section bands, emphasis |
+| Gold / yellow | `#f7b112` | 247, 177, 18 | Headings on red, borders, highlights, secondary buttons |
+| Pink (light) | `#fa968d` | 250, 150, 141 | Soft accent — mascot-adjacent, decorative touches |
+| Pink (dark) | `#fb4d51` | 251, 77, 81 | Stronger pink accent when more pop is needed |
+| Black | `#000000` | — | Outlines, body text on light backgrounds |
+| White | `#ffffff` | — | Text on dark/red, card surfaces |
+
+Supporting UI tokens (not re-sampled): `--color-dark-bg` (`#1a0000`), `--color-light-bg` / cream (`#faf6f0`), `--color-text-on-red` (`#fff5e0`). **Source of truth:** `jjbbq-theme/assets/scss/_variables.scss`.
+
+### SCSS / CSS custom properties
 
 ```scss
-:root {
-  --color-red:      #CC0000;
-  --color-gold:     #F5A800;
-  --color-black:    #000000;
-  --color-pink:     #F4A0A0;
-  --color-white:    #FFFFFF;
-  --color-dark-bg:  #1A0000;  // deep red-black for sections
-  --color-light-bg: #FFF8EE;  // warm off-white for alternating sections
-}
+// See _variables.scss — excerpt:
+// $color-red, $color-gold, $color-pink-light, $color-pink-dark, $color-black, $color-white
+// --color-gold-dark is derived in SCSS for hover / depth on gold.
 ```
 
 ### Typography Direction

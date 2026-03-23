@@ -4,7 +4,7 @@
 
 /* Highlight upcoming event rows */
 .post-type-jjbbq_event .type-jjbbq_event .jjbbq-status--upcoming {
-    background: #F5A800;
+    background: #f7b112;
     color: #000;
     padding: 2px 8px;
     border-radius: 3px;
@@ -21,7 +21,7 @@
 }
 
 .post-type-jjbbq_event .type-jjbbq_event .jjbbq-status--sold-out {
-    background: #CC0000;
+    background: #dd2c2f;
     color: #fff;
     padding: 2px 8px;
     border-radius: 3px;
@@ -31,11 +31,11 @@
 
 /* Subtle row highlighting based on status */
 .post-type-jjbbq_event tr:has(.jjbbq-status--upcoming) {
-    background-color: rgba(245, 168, 0, 0.08) !important;
+    background-color: rgba(247, 177, 18, 0.08) !important;
 }
 
 .post-type-jjbbq_event tr:has(.jjbbq-status--sold-out) {
-    background-color: rgba(204, 0, 0, 0.05) !important;
+    background-color: rgba(221, 44, 47, 0.05) !important;
 }
 
 /* Pig mascot in admin menu */

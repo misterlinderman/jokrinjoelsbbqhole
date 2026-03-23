@@ -52,7 +52,7 @@ Create all files with correct WordPress file headers. The theme name is "Jorkin'
 In the jjbbq-theme/assets/scss/ directory, create the following SCSS files:
 
 _variables.scss — Define CSS custom properties AND SCSS variables for:
-- Colors: --color-red: #CC0000, --color-gold: #F5A800, --color-black: #000000, --color-pink: #F4A0A0, --color-white: #FFFFFF, --color-dark-bg: #1A0000, --color-light-bg: #FFF8EE
+- Colors: official brand values in `assets/scss/_variables.scss` — red `#dd2c2f`, gold `#f7b112`, pink light `#fa968d`, pink dark `#fb4d51`, black `#000000`, white `#ffffff`, plus UI tokens (cream light-bg, dark-bg, text-on-red). Photoshop references: `reference-images/Initial Build and Client Identity/jjbbq-*.png`.
 - Font families: --font-display (Bangers from Google Fonts), --font-body (Inter)
 - Spacing scale: --space-xs through --space-xxl
 - Container max-width: 1200px
@@ -182,7 +182,7 @@ header.php:
 - Logo: display site logo image if set (custom logo support), fallback to site name as text
 - Primary nav: wp_nav_menu with container class .site-nav
 - Mobile hamburger button .nav-toggle with aria-label and three-bar icon (CSS or SVG)
-- Header should be dark red (#CC0000) background, white/gold text
+- Header should be brand red (`#dd2c2f`) background, white/gold text
 - On mobile (<768px): nav collapses, hamburger visible
 
 footer.php:
@@ -221,7 +221,7 @@ front-page.php structure (call get_template_part() for each section):
 8. get_footer()
 
 template-parts/hero.php:
-- Full-width section, dark red background (#CC0000)
+- Full-width section, brand red background (`#dd2c2f`)
 - Large logo display (using get_theme_mod or hardcoded img tag with TODO)
 - Headline: "Pop-Up BBQ. Sell-Out Quality." (h1)
 - Subhead: "Smoked in Omaha. Gone before you know it."
@@ -338,7 +338,7 @@ Page sections:
    - "Prefer to reach out directly? DM us on Instagram." (with IG link)
 
 Also create/update assets/scss/_catering.scss with form styles:
-- Input/textarea: black border, gold focus ring (outline: 2px solid #F5A800)
+- Input/textarea: black border, gold focus ring (use `var(--color-gold)` / `#f7b112`)
 - Label: bold, uppercase, small caps
 - Submit button: full .btn-primary treatment
 ```

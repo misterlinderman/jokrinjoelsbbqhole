@@ -13,4 +13,5 @@ alwaysApply: false
 - `main.scss` imports all partials — this compiles to `assets/css/main.css`
 - Max compiled CSS target: ~20-30kb
 - Container max-width: 1200px
-- Fonts: Bangers (display), Inter (body) via Google Fonts
+- Fonts: Boogaloo (display), Nunito (body) — enqueued in `inc/enqueue.php`
+- Brand colors: see `wordpress-project.mdc` and `_variables.scss` (`--color-pink-light`, `--color-pink-dark`, etc.)
