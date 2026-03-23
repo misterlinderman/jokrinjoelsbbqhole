@@ -5,8 +5,8 @@
  * @package JJBBQ
  */
 
-$instagram_url = get_theme_mod( 'jjbbq_instagram_url', '' );
-$facebook_url  = get_theme_mod( 'jjbbq_facebook_url', '' );
+$instagram_url = jjbbq_option( 'instagram_url', '' );
+$facebook_url  = jjbbq_option( 'facebook_url', '' );
 $footer_logo      = get_theme_file_uri( 'reference-images/logo-primary.png' );
 ?>
 

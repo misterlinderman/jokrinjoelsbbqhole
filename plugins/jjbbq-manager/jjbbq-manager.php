@@ -42,8 +42,11 @@ require_once JJBBQ_PLUGIN_PATH . 'includes/cpt-menu-items.php';
 require_once JJBBQ_PLUGIN_PATH . 'includes/acf-fields.php';
 require_once JJBBQ_PLUGIN_PATH . 'includes/admin-columns.php';
 require_once JJBBQ_PLUGIN_PATH . 'includes/helpers.php';
+require_once JJBBQ_PLUGIN_PATH . 'includes/site-options.php';
+require_once JJBBQ_PLUGIN_PATH . 'includes/admin-menu.php';
 require_once JJBBQ_PLUGIN_PATH . 'includes/seed-data.php';
 require_once JJBBQ_PLUGIN_PATH . 'includes/catering-form.php';
+require_once JJBBQ_PLUGIN_PATH . 'includes/gravity-forms-catering.php';
 
 /**
  * Enqueue admin styles.

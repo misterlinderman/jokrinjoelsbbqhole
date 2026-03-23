@@ -66,6 +66,10 @@ $color-light-bg: $color-cream;
   --radius-md: 8px;
   --radius-lg: 16px;
 
+  // Hard “slab” shadows (no blur) — offsets tuned for hover press illusion
+  --text-shadow-brutal-lg: 6px 6px 0 var(--color-black);
+  --text-shadow-brutal-xl: 9px 9px 0 var(--color-black);
+
   // Breakpoints (for reference — used as SCSS vars below)
   --bp-sm: 480px;
   --bp-md: 768px;

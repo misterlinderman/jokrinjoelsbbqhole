@@ -38,7 +38,14 @@
     background-color: rgba(221, 44, 47, 0.05) !important;
 }
 
-/* Pig mascot in admin menu */
+/* JJBBQ hub menu */
+#adminmenu .toplevel_page_jjbbq .wp-menu-image::before {
+    content: "🐷";
+    font-family: inherit;
+    font-size: 18px;
+}
+
+/* Pig mascot on Pop-Up Events CPT */
 #adminmenu .menu-icon-jjbbq_event .wp-menu-image::before {
     content: "🐷";
     font-family: inherit;

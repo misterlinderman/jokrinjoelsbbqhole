@@ -52,13 +52,16 @@ The item stays in your system but won't show on the public menu.
 
 ---
 
-## Updating Your Instagram Link
+## Updating Your Instagram Link (and other site text)
 
-1. Go to **Appearance → Customize** in the left menu
-2. Click **Jorkin' Joel's Settings**
-3. Click **Social Media**
-4. Update your Instagram handle and URL
-5. Click **Publish** at the top
+1. In the left menu, click **JJBBQ**
+2. Open **Site Settings**
+3. Update **Instagram URL**, **Instagram handle**, **Contact email**, **Homepage text**, etc.
+4. Click **Save Settings**
+
+For the catering inquiry form: use **JJBBQ → Catering Form** to choose a **Gravity Forms** form (recommended). If none is selected, the built-in form sends email via WordPress.
+
+For the labels on the public **Menu** page tabs: **JJBBQ → Menu Page Tabs**.
 
 ---
 

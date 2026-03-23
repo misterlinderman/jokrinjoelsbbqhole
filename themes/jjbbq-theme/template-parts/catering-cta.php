@@ -5,7 +5,7 @@
  * @package JJBBQ
  */
 
-$cta_headline = get_theme_mod( 'jjbbq_catering_cta_text', __( 'Feed Your Crew', 'jjbbq' ) );
+$cta_headline = jjbbq_option( 'catering_cta_text' );
 ?>
 
 <section class="catering-cta" aria-label="<?php esc_attr_e( 'Catering', 'jjbbq' ); ?>">

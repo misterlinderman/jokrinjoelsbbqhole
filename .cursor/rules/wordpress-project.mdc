@@ -8,7 +8,8 @@ alwaysApply: true
 ## Architecture
 - **Theme** (`jjbbq-theme/`): visual presentation only — classic PHP templates, no FSE/block theme
 - **Plugin** (`jjbbq-manager/`): all data structures (CPTs, ACF fields, admin UX)
-- Theme reads from plugin via helper functions; never define CPTs in the theme
+- **Site settings** live under **wp-admin → JJBBQ** (not the Customizer): social, contact, homepage copy, menu tab labels, catering Gravity Form selection
+- Theme reads options via `jjbbq_option()` in `inc/site-options.php`; never define CPTs in the theme
 
 ## PHP Standards
 - PHP 8.0+ compatible syntax

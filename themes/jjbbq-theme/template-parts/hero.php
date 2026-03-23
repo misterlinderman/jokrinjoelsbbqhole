@@ -5,8 +5,8 @@
  * @package JJBBQ
  */
 
-$headline = get_theme_mod( 'jjbbq_hero_headline', __( 'Pop-Up BBQ. Sell-Out Quality.', 'jjbbq' ) );
-$subhead  = get_theme_mod( 'jjbbq_hero_subhead', __( 'Smoked in Omaha. Gone before you know it.', 'jjbbq' ) );
+$headline = jjbbq_option( 'hero_headline' );
+$subhead  = jjbbq_option( 'hero_subhead' );
 $logo_url = get_theme_file_uri( 'reference-images/logo-primary.png' );
 ?>
 

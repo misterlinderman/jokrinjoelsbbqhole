@@ -6,7 +6,7 @@
  */
 
 $next_event    = function_exists( 'jjbbq_get_next_event' ) ? jjbbq_get_next_event() : null;
-$instagram_url = get_theme_mod( 'jjbbq_instagram_url', '' );
+$instagram_url = jjbbq_option( 'instagram_url', '' );
 ?>
 
 <section id="find-the-truck" class="next-popup" aria-label="<?php esc_attr_e( 'Next Pop-Up', 'jjbbq' ); ?>">

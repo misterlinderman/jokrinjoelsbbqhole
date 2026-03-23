@@ -6,28 +6,13 @@
  */
 
 /**
- * Register the admin page for seed data.
- */
-function jjbbq_register_seed_page(): void {
-    add_submenu_page(
-        'options-general.php',
-        __( 'JJBBQ Setup', 'jjbbq' ),
-        __( 'JJBBQ Setup', 'jjbbq' ),
-        'manage_options',
-        'jjbbq-setup',
-        'jjbbq_seed_page_render'
-    );
-}
-add_action( 'admin_menu', 'jjbbq_register_seed_page' );
-
-/**
- * Render the seed data admin page.
+ * Render the seed data admin page (JJBBQ → Sample Data).
  */
 function jjbbq_seed_page_render(): void {
     $seeded = get_option( 'jjbbq_seeded', false );
     ?>
     <div class="wrap">
-        <h1><?php esc_html_e( 'JJBBQ Setup', 'jjbbq' ); ?></h1>
+        <h1><?php esc_html_e( 'JJBBQ Sample Data', 'jjbbq' ); ?></h1>
 
         <?php if ( $seeded ) : ?>
             <div class="notice notice-success">

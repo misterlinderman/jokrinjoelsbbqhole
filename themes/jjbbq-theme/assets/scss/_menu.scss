@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 // ==============================================
 // Menu Section & Page
@@ -26,20 +27,15 @@
 
 // Menu item card (VF-5)
 .menu-item-card {
+  @include jjbbq-brutal-card-shadow(12px, 8px, var(--color-black));
   background-color: var(--color-cream);
-  border: 2px solid rgba(0, 0, 0, 0.08);
-  border-left: 5px solid var(--color-red);
-  border-radius: 4px;
+  border: 3px solid var(--color-black);
+  border-left: 6px solid var(--color-red);
+  border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  }
 }
 
 .menu-item-card__header {

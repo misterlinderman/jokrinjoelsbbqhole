@@ -24,7 +24,10 @@ function jjbbq_handle_catering_form(): void {
         exit;
     }
 
-    $admin_email = get_theme_mod( 'jjbbq_contact_email', get_option( 'admin_email' ) );
+    $admin_email = get_option( 'jjbbq_contact_email', '' );
+    if ( $admin_email === '' || $admin_email === false ) {
+        $admin_email = get_option( 'admin_email' );
+    }
 
     $subject = sprintf(
         /* translators: %s: person name */

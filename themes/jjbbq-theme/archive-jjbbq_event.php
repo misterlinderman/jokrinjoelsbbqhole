@@ -9,8 +9,8 @@ get_header();
 
 $upcoming = function_exists( 'jjbbq_get_upcoming_events' ) ? jjbbq_get_upcoming_events( 20 ) : null;
 $past     = function_exists( 'jjbbq_get_past_events' ) ? jjbbq_get_past_events( 20 ) : null;
-$instagram_url = get_theme_mod( 'jjbbq_instagram_url', '' );
-$instagram_handle = get_theme_mod( 'jjbbq_instagram_handle', '' );
+$instagram_url    = jjbbq_option( 'instagram_url', '' );
+$instagram_handle = jjbbq_option( 'instagram_handle', '' );
 ?>
 
 <main id="main-content" class="site-main">

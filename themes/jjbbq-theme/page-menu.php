@@ -9,12 +9,7 @@
 
 get_header();
 
-$categories = [
-    'core'      => __( 'Core Menu', 'jjbbq' ),
-    'specialty' => __( 'Specialty Items', 'jjbbq' ),
-    'sides'     => __( 'Sides', 'jjbbq' ),
-    'collab'    => __( 'Collaborations', 'jjbbq' ),
-];
+$categories = jjbbq_get_menu_tab_categories();
 ?>
 
 <main id="main-content" class="site-main">

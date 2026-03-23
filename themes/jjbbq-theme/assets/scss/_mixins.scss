@@ -1,0 +1,45 @@
+// ==============================================
+// Shared patterns — neo-brutalist hard shadows
+// ==============================================
+
+@mixin jjbbq-brutal-card-shadow($offset, $press, $color) {
+  box-shadow: $offset $offset 0 0 $color;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translate($press, $press);
+    box-shadow: ($offset - $press) ($offset - $press) 0 0 $color;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+      box-shadow: $offset $offset 0 0 $color;
+    }
+  }
+}
+
+// Buttons / submit — keyboard focus matches hover press
+@mixin jjbbq-brutal-control-shadow($offset, $press, $color) {
+  box-shadow: $offset $offset 0 0 $color;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    transform: translate($press, $press);
+    box-shadow: ($offset - $press) ($offset - $press) 0 0 $color;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover:not(:disabled),
+    &:focus-visible:not(:disabled) {
+      transform: none;
+      box-shadow: $offset $offset 0 0 $color;
+    }
+  }
+}
